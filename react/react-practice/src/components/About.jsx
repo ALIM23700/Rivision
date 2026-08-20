@@ -6,6 +6,7 @@ const About = (props) => {
   return (
 
         <div className='card'>
+          about page
          <h1>name:{props.name}</h1>
            <h2>age:{props.age}</h2>
 

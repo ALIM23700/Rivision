@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useReducer, useRef, useState } from 'react'
 import Home from './components/Home'
 import './App.css'
 import Contact from './components/Contact'
@@ -8,12 +8,36 @@ import DrilOne from './components/drilOne'
 import Driltwo from './components/driltwo'
 import Drilthree from './components/drilthree'
 import { Context1 } from './Context/contex1'
+import useCounter from './Hooks/useCounter'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import About from './components/About'
+import Nav from './Nav/nav'
+import ProductsDetails from './components/ProductsDetails'
+import NewProducts from './components/NewProducts'
+import Protected from './Protected'
 
 
 
 function App() {
   
-  const [price,setPrice]=useState(0)
+  const [increasehandle,decreasehandle,price]=useCounter()
+
+  
+  const [isloggedin,setIsloggedin]=useState(false);
+   const handlelogin=()=>{
+    setIsloggedin(!isloggedin)
+   }
+
+  const initialBounce=0;
+  
+  const reducer=(state,action)=>{
+    if(action=='plus'){
+      return state+1;
+    }
+
+  }
+ const [bounce,dispatch]= useReducer(reducer,initialBounce)
+  
 
     const something=()=>{
       const service=document.getElementById("bal")
@@ -30,16 +54,7 @@ function App() {
   }
   
 
-  const increasehandle=()=>{
-    
-    setPrice(price+1)
-   
-  }
-  const decreasehandle=()=>{
-    
-    setPrice(price-1)
-   
-  }
+  
   const [alldata,setAlldata]=useState([])
  
   useEffect(()=>{
@@ -86,6 +101,19 @@ function App() {
   
   return (
     <div>
+      <BrowserRouter>
+      <Nav></Nav>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
+         <Route path='*' element={<About></About>}></Route>
+         <Route path='/newproducts' element={<Protected isloggedin={isloggedin}><NewProducts></NewProducts></Protected>}></Route>
+         <Route path='/newproducts/:id' element={<ProductsDetails></ProductsDetails>}></Route>
+      </Routes>
+      </BrowserRouter>
+      <button className='btn' onClick={handlelogin}>{isloggedin ? 'login' : 'logout'}</button>
+      <button onClick={()=>dispatch('plus')} className='btn'>bounce:{bounce}</button>
       <form onSubmit={handlesubmit} className='border bg-amber-100 w-84 p-5 m-12'>
         <input onChange={(e)=>setName(e.target.value)} type='text' placeholder='enter our name' className='block p-2 bg-amber-50 rounded-md m-5'></input>
         <input onChange={(e)=>setEmail(e.target.value)} type='email' placeholder='enter our email' className='block p-2 bg-amber-50 rounded-md m-5'></input>
