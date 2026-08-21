@@ -17,7 +17,7 @@
 //console.log(publlics.indexOf(300))
 //console.log(publlics[3])
 //publlics[0]=33;
-//console.log(publlics)
+//console.log(publlics)statu
 //frindsName.push("kalam");
 //frindsName.pop("kalam");
 //console.log(frindsName)
