@@ -1,3 +1,4 @@
+//--------basic------------
 //console.log(10);
 //alert("alim vai")
 //document.write("alimvai")
@@ -7,7 +8,9 @@
 //var isTrue=true;
 //console.log(eggName);
 //console.log(typeof(isTrue))
-//-------arrat-----
+
+
+//-------array-----
 //var publlics=[50000,100,300,400,500,1000];
 //var frindsName=["alim","salim","dalim","valim"];
 //console.log(publlics)
@@ -25,6 +28,7 @@
 //publlics.shift()
 //publlics.sort()
 //console.log(publlics)
+
 //--------object-----------
 /*var alim={
     name:"alim",
@@ -42,6 +46,8 @@
 //console.log(typeof(alim))
 //console.log(typeof(publlics))
 //console.log(alim.alim2.age)
+
+
 //---------null , undefined-----------
 //var x;
 //var y=null;
@@ -52,6 +58,7 @@
 
 //----premative vs non premative
 /* premative:number,bolian non-premative:array,object,function*/
+
 
 //--------let,var,const-----------
 /* var x=20;
@@ -64,10 +71,298 @@ console.log(x); */
 //const x=25;//cannot reassign
 //console.log(x);
 //console.log(x);
-//--------mathematical operation------------
+
+
+//--------mathematical operation+string------------
 //let x=10
 //let y=20
 //let z=x+y;
 //console.log(z);//cabe minus,multiply,division
+//let num1="abdul";
+//let num2="alim";
+//let num3=10;
+//let num5=20;
+//let num4="10";
+//fullname=num1+" "+num2
+//fullname2=num3+num4;
+//fullname3=num3+num5+num4;
+//fullname4=num3+num5+parseInt(num4);
+//console.log(fullname);
+//console.log(fullname2);
+//console.log(fullname3);
+//console.log(fullname4);
+
+//-------int to string
+//const a=40.444
+//console.log(a.toFixed(2))
+//const b=487.00006
+//console.log(b.toString())
+//const c="56"
+//const d=Number(c);
+//console.log(typeof(d))
 
 
+//s--------horthand----------
+//const price=10;
+//price=price+1;
+
+//price+=1;
+//price++;
+
+//--------------comparison operator-----------
+//console.log(5<6)
+//console.log(5==6)
+//console.log(5=='5')//ture but type alada
+//console.log(5==='5')//false
+
+//----------conditional statement---------------
+/*let price=15
+if(price<15){
+    console.log("burger khabo")
+
+}
+else
+    console.log("barhgar khabo na")
+
+const income=2000
+const iphone=2
+if(income==2000 && iphone==2){
+    console.log("frindship korbo")
+}
+else{
+    console.log("frindship korbo na")
+}
+const bari=2
+const gari=1
+if(bari==2|| iphone==2){
+    console.log("frindship korbo")
+}
+else{
+    console.log("frindship korbo na")
+}*/
+
+//--------------while loop--------------
+//let count=0;
+//while(count<5){
+    //console.log("hello world");
+    //count++;
+//}
+//const array=["rahim","karim","hadu","madu","jadu"]
+//let count=0;
+//while(count<array.length){
+ //   console.log(array[count])
+ //   count++;
+//}
+//let count=1;
+//while(count<20){
+   // console.log(count)
+  //  count+=2;
+//}
+
+
+
+//-----------for loop----------------
+//let i=0;
+//for(i=0;i<20;i+=2){
+   // console.log(i);
+//}
+//const array=["alim","dalim","salim"]
+//let i=0;
+//for(i=0;i<array.length;i++){
+ //   console.log(array[i]);
+//}
+
+
+
+//----------do while loop---------------
+//let a=1;
+//do{
+//    console.log("programimg shikbo")
+//a++;
+
+//}while(a<=10);
+
+//------------switch case-------------
+/*let num=1;
+
+switch(num){
+    case 0:
+        console.log("zero")
+        break;
+    case 1:
+        console.log("one")
+        break;
+     case 2:
+        console.log("two")
+        break;
+    default:
+        console.log("none")
+
+
+}*/
+
+
+
+//--------------ternary operator-----------
+
+//let age=20;
+//const vote=(age >18 ) ? console.log("vote dite parbe") : console.log("vote dite parbe")
+
+
+//------------function------------------
+/*function myname(name){
+    console.log(name)
+}
+myname("alim");
+
+function add(a,b){
+    sum=a+b;
+    return sum;
+}
+add(5,5);
+console.log(sum);
+const myobj={
+    name:"alim",
+    age:25,
+    phone:"01791923700"
+}
+function myidentity(objname){
+    console.log(`my name is ${objname.name} my age is ${objname.age} my phone ${objname.phone}`)
+}
+myidentity(myobj)
+function myidentity(objname){
+    console.log(`my name is ${objname.name} my age is ${objname.age} my phone ${objname.phone}`)
+}
+myidentity(myobj={
+    name:"dalim",
+    age:90,
+    phone:"22019110"
+})
+const array=["alim","dalim","salim","valim"]
+function myidentity(array){
+
+    console.log(`my name is ${array[0] }`)
+}
+myidentity(array)
+
+//---------rest operator--------------
+function AddTocart(...num){
+    return num
+
+}
+console.log(AddTocart(500,900,300));
+
+
+//----------spread operator--------------
+//let array1=[10,14,12]
+//let array2=[3,7,2]
+//let array3=[...array1,1,2,3];
+//console.log(array3)
+
+//array1=[1,2,3,4]
+//function myarray(a,b,c,d){
+ //   return console.log(a+b+c+d)
+//}
+//myarray(...array1);
+
+
+//------------math-------------
+const a=35.01;
+const b=Math.floor(a)
+const c=Math.ceil(a)
+console.log(c)
+
+//--------------date---------------
+console.log(Date())
+
+//--------------arrow function----------------
+const yourinfo=()=>{
+    console.log("this is arrow function")
+
+}
+yourinfo();
+const add=(a,b)=>console.log(a+b);
+add(5,5);*/
+
+
+//---------ForEach loop-------------
+//const heros=["allu","ballu","sallu","arjun vudai"]
+// heros.forEach((hero)=>{
+    //console.log(hero)
+//})
+
+
+//-------------------------map-------------------------
+//const numbers=[1,2,3,4,5,6,7,8]
+//numbers.map((num)=> console.log(num));
+
+
+//-------------------------Filter-----------------------
+/*const myobj=[
+    {
+        name:"alim",
+        age:"25",
+        profession:"actor"
+    },
+    {
+        name:"vlim",
+        age:"50",
+        profession:"doctor"
+    },
+    {
+        name:"dlim",
+        age:"29",
+        profession:"enginner"
+    }
+]
+const newobj=myobj.filter((ok)=> ok.profession=='actor');
+console.log(newobj)
+
+//----------------array reduce value-----------------
+const numbers=[1,2,3,4]
+const result=numbers.reduce((prevalue,currentvalue)=>{
+    return prevalue+currentvalue
+},0)
+console.log(result)
+
+const shoppingCart=[
+    {
+        name:"iphone 12",
+        price:13000
+    },
+    {
+        name:"iphone 14",
+        price:15000
+    },
+    {
+        name:"iphone 16",
+        price:18000
+    },
+]
+const totalcart=shoppingCart.reduce((previtem,newitem)=>{
+    return previtem+newitem.price;
+},0)
+console.log(totalcart)
+
+
+//----------------slice-----------------
+const numbers=[1,2,3,4,5,6,7,8,9]
+const newnumbers=numbers.slice(2,5)
+console.log(newnumbers)
+
+//----------------splice----------------
+const numbers=[1,2,3,4,5,6,7,8,9]
+const newnumbers=numbers.splice(2,5,7,7)
+console.log(newnumbers)
+console.log(numbers)
+
+//----------Destructuring-----------------
+const newobj={
+    name:"alim",
+    price:90,
+    mobile:"01791723700"
+}
+const {name,price,mobile}=newobj
+console.log(name);
+console.log(price);
+console.log(mobile);*/
