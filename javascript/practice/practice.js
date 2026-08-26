@@ -365,4 +365,167 @@ const newobj={
 const {name,price,mobile}=newobj
 console.log(name);
 console.log(price);
-console.log(mobile);*/
+console.log(mobile);
+
+//---------------For in loop------------------
+const frinds={
+    name:"alim",
+    age:25,
+    mobile:'01791723799'
+
+
+}
+for(let frind in frinds){
+    console.log(frinds[frind]);
+}
+const alimarray=["alim","dalim","salim","valim"];
+for(let x in alimarray){
+    console.log(alimarray[x])
+}
+
+const aalim=["alim","salim","kalim"];
+for(let x in aalim){
+    console.log(aalim[x])
+}
+
+//---------------for of loop--------------------
+const frinds={
+    name:"alim",
+    age:25,
+    mobile:'01791723799'
+
+
+}
+const keys=Object.keys(frinds)
+for(let key of keys){
+    console.log(keys[key])
+}
+
+//--------------global,local scope-------------
+for(let i=1;i<9;i++){
+    let sum=1;
+    sum=sum*i;
+   
+}
+ console.log(sum)
+
+ function sum(){
+    let store=0;
+    for(let i=0;i<arguments.length;i++)
+         store=store+arguments[i];
+    {
+        console.log(store)
+    }
+ }
+sum(2,3,4,5)
+
+
+//--------------remove duplicate element-----------------
+
+
+const newarray=["alim","dalim","salim","valim","alim"]
+function removeduplicate(newarray){
+    let storearray=[];
+    for(let i=0;i<newarray.length;i++){
+        const name=newarray[i];
+        if(storearray.includes(name)===false'){
+            storearray.push(name);
+        }
+       
+    }
+    return storearray
+}
+const result=removeduplicate(newarray);
+console.log(result)
+
+
+//error handeling using use strict
+//"use strict"
+//a=5;
+//console.log(5)
+
+
+//-----------------this keyword------------------
+const pareantaray={
+    name:"alim",
+    ahge:25,
+    message: function (){
+        console.log(`this is abdul ${this.name}`)
+    }
+
+}
+
+pareantaray.message()
+
+const newarray=[
+    {
+    name:'alim',
+    age:26
+   },
+    {
+    name:'dlim',
+    age:27
+   },
+    {
+    name:'slim',
+    age:27
+   },
+    {
+    name:'dlim',
+    age:28
+   }
+]
+function newfunction(newarray,search){
+    const newmine=[]
+    for(let num in newarray){
+       
+        if(newarray[num].name===search){
+            newmine.push(newarray[num].name)
+        }
+    }
+   return newmine;
+
+}
+const result=newfunction(newarray,'alim');
+console.log(result)
+
+
+//----------------setTimeout-----------------
+const first=(a,b,callback)=>{
+    setTimeout(()=>{
+
+        console.log(a+b)
+         callback()
+    },5000)
+   
+}
+const second=()=>{
+    console.log("hi i am second")
+}
+
+first(5,5,second)
+
+
+//------------promise------------------
+let willmarry=true;
+new Promise((resloved,reject)=>{
+    setTimeout(()=>{
+        if(willmarry){
+            resloved('success')
+        }
+        else
+            reject("soryy...")
+
+    },1000)
+
+})
+.then(()=>{
+    console.log("promise kept")
+})
+.catch(()=>{
+    console.log("promise not kept")
+})*/
+const addtocart=()=>{
+    localStorage.setItem("name","abdul alim")
+     localStorage.setItem("bal","abdul alim2")
+}
