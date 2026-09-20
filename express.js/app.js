@@ -1,11 +1,19 @@
 const express=require("express");
 const router = require("./Route/userRouter");
+const router2 = require("./Route/newRoute");
+const router3 = require("./Route/restRoute");
+const connectDb = require("./config/CONFIG.JS");
 
+connectDb()
 const app=express();
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
+
 app.use("/",router)
+app.use("/users/",router2)
+app.use("/rest",router3)
+
 app.get("/view",(req,res)=>{
     res.sendFile(__dirname+"/views/index.html")
 })
@@ -41,6 +49,7 @@ app.post("/user",myMiddleware,(req,res)=>{
     const name=req.body.name;
     res.send(`registration successful"${name}`)
 })
+
 
 
 module.exports=app
