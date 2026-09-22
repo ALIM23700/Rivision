@@ -1,10 +1,11 @@
-const {getUser, createUser, updateUser, deleteUser} = require('../controllers/userController')
+const { getdata, createdata, updatedata, deltedata } = require('../controllers/userController')
 
 const router3=require('express').Router()
 
-router3.get("/get",getUser)
-router3.post("/post",createUser)
-router3.put("/update/:id",updateUser)
-router3.delete("/delete/:id",deleteUser)
+router3.get("/get",getdata)
+router3.post("/post",createdata)
+router3.put("/put/:id",updatedata)
+router3.delete("/delete/:id",deltedata)
+
 
 module.exports=router3
