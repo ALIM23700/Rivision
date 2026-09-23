@@ -3,6 +3,7 @@ const router = require("./Route/userRouter");
 const router2 = require("./Route/newRoute");
 const router3 = require("./Route/restRoute");
 const connectDb = require("./config/CONFIG.JS");
+const router4 = require("./Route/myRoute");
 
 connectDb()
 const app=express();
@@ -13,6 +14,7 @@ app.use(express.urlencoded({extended:true}))
 app.use("/",router)
 app.use("/users/",router2)
 app.use("/rest",router3)
+app.use("/",router4)
 
 app.get("/view",(req,res)=>{
     res.sendFile(__dirname+"/views/index.html")

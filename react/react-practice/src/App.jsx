@@ -15,19 +15,25 @@ import Nav from './Nav/nav'
 import ProductsDetails from './components/ProductsDetails'
 import NewProducts from './components/NewProducts'
 import Protected from './Protected'
+import Counterview from './Counter/counterview'
+
+
+
+
 
 
 
 function App() {
-  
-  const [increasehandle,decreasehandle,price]=useCounter()
+ 
 
   
   const [isloggedin,setIsloggedin]=useState(false);
    const handlelogin=()=>{
     setIsloggedin(!isloggedin)
    }
-
+   const handlecout=()=>{
+    dispatch(increamentCounter())
+   }
   const initialBounce=0;
   
   const reducer=(state,action)=>{
@@ -36,7 +42,7 @@ function App() {
     }
 
   }
- const [bounce,dispatch]= useReducer(reducer,initialBounce)
+ 
   
 
     const something=()=>{
@@ -101,6 +107,7 @@ function App() {
   
   return (
     <div>
+      <Counterview></Counterview>
       <BrowserRouter>
       <Nav></Nav>
       <Routes>
@@ -108,12 +115,17 @@ function App() {
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/about' element={<About></About>}></Route>
          <Route path='*' element={<About></About>}></Route>
-         <Route path='/newproducts' element={<Protected isloggedin={isloggedin}><NewProducts></NewProducts></Protected>}></Route>
+          
+            
+         <Route path='/newproducts' element={<Protected isloggedin={isloggedin
+          
+         }><NewProducts></NewProducts></Protected>}></Route>
          <Route path='/newproducts/:id' element={<ProductsDetails></ProductsDetails>}></Route>
       </Routes>
       </BrowserRouter>
+      
       <button className='btn' onClick={handlelogin}>{isloggedin ? 'login' : 'logout'}</button>
-      <button onClick={()=>dispatch('plus')} className='btn'>bounce:{bounce}</button>
+      <button onClick={()=>dispatch('plus')} className='btn'>bounce:</button>
       <form onSubmit={handlesubmit} className='border bg-amber-100 w-84 p-5 m-12'>
         <input onChange={(e)=>setName(e.target.value)} type='text' placeholder='enter our name' className='block p-2 bg-amber-50 rounded-md m-5'></input>
         <input onChange={(e)=>setEmail(e.target.value)} type='email' placeholder='enter our email' className='block p-2 bg-amber-50 rounded-md m-5'></input>
@@ -143,11 +155,10 @@ function App() {
       <div className={`${toggle ? 'bg-amber-700 m-12 border rounded-md h-48 w-48 shadow-md' : "bg-amber-100 m-12 w-36 h-36"}`} >
         this is {toggle ? 'special div' : 'normal div'}
       </div>
-      <h1>price:{price}</h1>
-      <button className='btn' onClick={increasehandle}>Increase</button><br></br><br></br>
-       <button className='btn' onClick={decreasehandle}>Decrease</button>
-      <h2>price:{price}</h2>
-      <p>price:{price}</p>
+    
+      <button className='btn' >Increase</button><br></br><br></br>
+       <button className='btn'>Decrease</button>
+     
       <button className='btn' onClick={galidei}>Gali</button>
       <h1 id='bal'>Ok vai</h1>
          <button className='btn'  onClick={something}>Click Me</button>
